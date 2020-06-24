@@ -1,0 +1,17 @@
+create database planosaude;
+
+create table plano_saude(
+id serial primary key not null,
+descricao text not null
+);
+
+create table pessoa(
+id serial primary key not null, 
+nome text not null, 
+cpf varchar(14) not null,
+dt_nascimento timestamp not null, 
+endereco text not null,
+telefone text not null,
+historico text not null,
+ref_plano_saude integer references plano_saude(id)
+);
