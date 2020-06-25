@@ -15,3 +15,10 @@ telefone text not null,
 historico text not null,
 ref_plano_saude integer references plano_saude(id)
 );
+
+create user planosaude with password 'planosaude';
+
+ALTER DATABASE planosaude OWNER TO planosaude;
+
+ALTER TABLE plano_saude OWNER TO planosaude;
+ALTER TABLE pessoa OWNER TO planosaude;
